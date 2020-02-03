@@ -6,15 +6,15 @@
 struct lieux {
   char nom[20];
   char description[150];
-  int staminaDéplacement;
+  int staminaDéplacement;   //ressource PV pour les déplacements 
 }
 
 
 typedef struct lieux lieux; 
 
-lieux Opale = {"Opale", "Point de rencontre et lieu de repos pour les aventuriers de passage"};
-lieux Roncenoir = {"Roncenoir", "Une ville sombre située à l'entrée de la Grande Forêt",45};
-lieux Amaurath = {"Amaurath", "Ruines de l'ancien Palais des Sages, perdurant au fin fond de la Grande Forêt", 35};
+lieux Opale = {"Opale", "Point de rencontre et lieu de repos pour les aventuriers de passage", 50};
+lieux Roncenoir = {"Roncenoir", "Une ville sombre située à l'entrée de la Grande Forêt",50};
+lieux Amaurath = {"Amaurath", "Ruines de l'ancien Palais des Sages, perdurant au fin fond de la Grande Forêt", 50};
 lieux Repère = {"Repère", "Il s'agit du repère de la sorcière d'Ombre, la gardienne de la fôret et du Grand Arbre, ce 
 n'est pas un endroit recommandable", 50};
 
@@ -46,6 +46,12 @@ scanf("%s", choixLieux);
  
 if (choixLieux == 1){
   printf("Vous décidez de vous engager dans la forêt pour atteindre la ville principale et récolter des informations.\n");
+     if (staminaJoueur <49){
+     printf("Désolé, vous n'avez pas assez d'énergie pour atteindre cet endroit. Voulez-vous vous reposer ? Accepter[0], Refuser[1] \n", staminaJoueur);
+     scanf("%d", &choixRepos);
+      if (choixRepos == 1){
+      staminaJoueur = staminaJoueur + repos
+     }
   printf("%s\n", Roncenoir.description);
   staminaJoueur = staminaJoueur - staminaDéplacement;
   printf("vous avez %d points de stamina.\n", staminaJoueur);
@@ -60,11 +66,23 @@ if (choixLieux == 1){
        if (choixLieux == 2){
     printf("En vous engageant dans la forêt, vous finissez par vous perdre, vous attérissez dans un tas de ruines mystérieuses
     et décidez donc de vous arrêter pour explorer.\n");
+       if (staminaJoueur <49){
+     printf("Désolé, vous n'avez pas assez d'énergie pour atteindre cet endroit. Voulez-vous vous reposer ? Accepter[0], Refuser[1] \n", staminaJoueur);
+     scanf("%d", &choixRepos);
+      if (choixRepos == 1){
+      staminaJoueur = staminaJoueur + repos
+     }
     printf("%s\n", Amaurath.description); 
     staminaJoueur = staminaJoueur - staminaDéplacement;
       }
        if (choixLieux == 3){
     printf("Après une longue exploration, fatigué, vous finissez par atteindre un arbre impossant qui semble... animé.\n");
+       if (staminaJoueur <49){
+     printf("Désolé, vous n'avez pas assez d'énergie pour atteindre cet endroit. Voulez-vous vous reposer ? Accepter[0], Refuser[1] \n", staminaJoueur);
+     scanf("%d", &choixRepos);
+      if (choixRepos == 1){
+      staminaJoueur = staminaJoueur + repos
+     }
     printf("%s\n", Repère.description); 
     staminaJoueur = staminaJoueur - staminaDéplacement;
       }
