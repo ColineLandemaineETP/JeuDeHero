@@ -24,8 +24,9 @@ n'est pas un endroit recommandable", 50};
 
 int main(){
   int choix;
-  int staminaJoueur
+  int staminaJoueur = 100
   int choixRepos
+  int repos = 50
 }
 
 char choixLieux [4];  //ID des Lieux
@@ -140,6 +141,10 @@ if (choixLieux == 3){
       }
 }
 
-
+if(staminaJoueur = 0){
+printf("Votre énergie tombe à 0, vous tombez de fatigue\n");
+printf("G A M E   O V E R\n");
 
 }
+
+return 0;
